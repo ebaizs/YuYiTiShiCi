@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通用语义智能标注系统</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  </head>
+  <body>
+    <!-- 登录界面容器 -->
+    <div id="login-container" style="display: none;">
+      <div class="login-form">
+        <h2><i class="fas fa-palette"></i> AI语义标注系统</h2>
+        <div class="login-input-group">
+          <input type="text" id="username" placeholder="用户名" autocomplete="username" />
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="login-input-group">
+          <input type="password" id="password" placeholder="密码" autocomplete="current-password" />
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="login-error" id="login-error"></div>
+        <button id="login-button">
+          <i class="fas fa-sign-in-alt"></i> 登录
+        </button>
+        <div class="login-loading" id="login-loading" style="display: none;">
+          <i class="fas fa-spinner fa-spin"></i> 登录中...
+        </div>
+        <div class="login-footer">
+          <p>清扬15662061321原创工具</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- 主应用容器 -->
+    <div id="main-container" style="display: none;">
+      <div class="container">
+        <header>
+          <div class="header-left">
+            <div class="config-selector">
+              <select id="configSelector">
+                <option value="interior">家装设计</option>
+                <option value="commercial">公装设计</option>
+                <option value="architecture">建筑景观</option>
+                <option value="creative">创意绘画</option>
+              </select>
+              <button id="setDefaultConfigButton">设为默认</button>
+            </div>
+          </div>
+          <div class="header-center">
+            <h1>AI绘画-通用语义标注/智能提示词系统</h1>
+            <p>
+              基于语义分割的AI绘画控制台 -
+              支持颜色语义精确标注/智能生成提示词--清扬15662061321原创
+            </p>
+          </div>
+          <div class="header-right">
+            <!-- 用户信息和配置信息容器 -->
+            <div class="header-right-content">
+                <!-- 用户信息显示在第一行 -->
+                <div id="user-info" class="user-info">
+                    <!-- 用户信息和退出按钮会通过JS动态生成 -->
+                </div>
+                <!-- 配置信息显示在第二行 -->
+                <div id="currentConfigInfo" class="config-info">
+                    当前配置: 家装设计
+                </div>
+            </div>
+        </div>
+      </header>
+
+      <div class="main-content">
+        <!-- 左侧工具栏 -->
+        <div class="control-panel">
+          <!-- 左侧标签页 -->
+          <div class="tab-buttons-left">
+            <button class="tab-button-left active" data-tab="basic">
+              基础设置
+            </button>
+            <button class="tab-button-left" data-tab="export">导出设置</button>
+          </div>
+
+          <!-- 基础设置标签页内容 -->
+          <div class="tab-content-left active" id="basic-tab">
+            <div class="panel-section">
+              <div class="panel-title">画布设置</div>
+              <div class="canvas-controls">
+                <input
+                  type="number"
+                  id="canvasWidth"
+                  placeholder="宽度"
+                  value="1024"
+                  min="100"
+                  max="2000"
+                />
+                <input
+                  type="number"
+                  id="canvasHeight"
+                  placeholder="高度"
+                  value="1024"
+                  min="100"
+                  max="2000"
+                />
+              </div>
+              <button id="resizeCanvas" class="secondary">调整画布尺寸</button>
+
+              <div class="control-group" style="margin-top: 10px">
+                <div class="file-input-wrapper">
+                  <div class="file-input-button">加载图片到背景层</div>
+                  <div class="hint-text">上传图长边自动改为<1024像素</div>
+                  <input type="file" id="imageUpload" accept="image/*" />
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-title">缩放控制</div>
+              <div class="zoom-controls">
+                <button id="zoomOut">-</button>
+                <span class="zoom-level" id="zoomLevel">100%</span>
+                <button id="zoomIn">+</button>
+                <button id="resetZoom" class="secondary">重置</button>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-title">图层控制</div>
+              <div class="layer-controls">
+                <button id="toggleBackground" class="secondary">
+                  隐藏背景
+                </button>
+                <button id="clearDrawing" class="warning">清空标注</button>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-title">操作模式</div>
+              <div class="tool-mode">
+                <div class="tool-button" id="pipetteMode">
+                  <i class="fas fa-eye-dropper"></i>
+                  <span>吸管</span>
+                </div>
+                <div class="tool-button active" id="paintMode">
+                  <i class="fas fa-paint-brush"></i>
+                  <span>画笔</span>
+                </div>
+                <div class="tool-button" id="eraseMode">
+                  <i class="fas fa-eraser"></i>
+                  <span>橡皮</span>
+                </div>
+                <div class="tool-button" id="lassoMode">
+                  <i class="fas fa-draw-polygon"></i>
+                  <span>套索</span>
+                </div>
+                <div class="tool-button undo-button" id="undoButton">
+                  <i class="fas fa-undo"></i>
+                  <span>撤销</span>
+                </div>
+                <div class="tool-button" id="vanishMode">
+                  <i class="fas fa-eye-slash"></i>
+                  <span>消除</span>
+                </div>
+              </div>
+
+              <div class="hint-text">清扬15662061321原创工具</div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-title">画笔设置</div>
+              <div class="vertical-tools">
+                <div class="preview-container">
+                  <div class="preview-circle" id="previewCircle">
+                    <div
+                      class="preview-circle-inner"
+                      id="previewCircleInner"
+                    ></div>
+                  </div>
+                  <div class="preview-info">
+                    <div class="preview-info-item">
+                      <span class="preview-label">大小</span>
+                      <span class="preview-value" id="previewBrushSize"
+                        >15</span
+                      >
+                    </div>
+                    <div class="preview-info-item">
+                      <span class="preview-label">语义名</span>
+                      <span class="preview-value" id="previewColorName"
+                        >玻璃幕墙</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="horizontal-slider-group">
+                  <label class="slider-label">大小</label>
+                  <input
+                    type="range"
+                    id="brushSize"
+                    class="horizontal-slider"
+                    min="1"
+                    max="100"
+                    value="15"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="keyboard-shortcuts">
+              <h4>键盘快捷键</h4>
+              <ul>
+                <li>
+                  <kbd>I</kbd>: 吸管；<kbd>B</kbd>: 画笔；<kbd>E</kbd>: 橡皮擦
+                </li>
+                <li>
+                  <kbd>O</kbd>: 套索；<kbd>X</kbd>: 消除笔；<kbd>Ctrl+Z</kbd>:
+                  撤销
+                </li>
+                <li><kbd>使用画笔 同时长按Shift</kbd>: 绘制直线</li>
+                <li><kbd>Enter</kbd>: 套索完成 ； <kbd>ESC</kbd>: 取消</li>
+                <li>按<kbd>+，}，↑</kbd>:增大笔触;<kbd>-，{，↓</kbd>: 减小</li>
+                <li><kbd>Alt+1</kbd>: 切换左工具；<kbd>Alt+2</kbd>: 切换右</li>
+                <li>
+                  <kbd>Tab</kbd>: 显隐右工具;<kbd>Alt+滚轮</kbd>:
+                  缩放画布<kbd>Alt+左键/中键</kbd>: 移动画布
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 导出设置标签页内容 -->
+          <div class="tab-content-left" id="export-tab">
+            <div class="panel-section">
+              <div class="panel-title">图层控制</div>
+              <div class="layer-controls">
+                <button id="toggleBackground1" class="secondary">
+                  隐藏背景
+                </button>
+                <button id="clearDrawing1" class="warning">清空标注</button>
+              </div>
+            </div>
+
+            <!-- 新增：导出设置中的笔触预览 -->
+            <div class="panel-section">
+              <div class="panel-title">当前笔触预览</div>
+              <div class="vertical-tools">
+                <div class="preview-container">
+                  <div class="preview-circle" id="previewCircleExport">
+                    <div
+                      class="preview-circle-inner"
+                      id="previewCircleInnerExport"
+                    ></div>
+                  </div>
+                  <div class="preview-info">
+                    <div class="preview-info-item">
+                      <span class="preview-label">大小</span>
+                      <span class="preview-value" id="previewBrushSizeExport"
+                        >15</span
+                      >
+                    </div>
+                    <div class="preview-info-item">
+                      <span class="preview-label">语义名</span>
+                      <span class="preview-value" id="previewColorNameExport"
+                        >玻璃幕墙</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="keyboard-shortcuts">
+              <h4>键盘快捷键</h4>
+              <ul>
+                <li>
+                  <kbd>Alt+1</kbd>: 切换左工具栏；<kbd>Alt+2</kbd>: 切换右工具栏
+                </li>
+                <li><kbd>Tab</kbd>: 显示/隐藏右侧工具栏</li>
+              </ul>
+            </div>
+            <div class="panel-section">
+              <div class="panel-title">AI绘画提示词</div>
+              <div class="control-group">
+                <label for="promptOutput">生成的提示词</label>
+                <textarea id="promptOutput" rows="6"></textarea>
+              </div>
+
+            <!-- 修改为： -->
+<div class="blur-prompt-buttons">
+  <button id="blurPrompt" class="secondary" style="flex: 0.7">
+      模糊化
+  </button>
+  <button id="copyPrompt" style="flex: 1">复制提示词</button>
+</div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-title">导出选项</div>
+              <div class="export-options">
+                <div class="export-radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="exportType"
+                      value="combined"
+                      checked
+                    />
+                    导出完整图像（背景+标注）
+                  </label>
+                  <label>
+                    <input type="radio" name="exportType" value="drawing" />
+                    仅导出标注图层（无背景，保持原尺寸）
+                  </label>
+                </div>
+                <button id="exportImage" class="success">导出图像</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 中间画布区域 -->
+        <div class="canvas-container">
+          <!-- 隐藏按钮直接放在画布容器内 -->
+          <button
+            id="canvasToggleRightPanel"
+            class="canvas-toggle-button"
+            title="显示右侧工具栏 (Tab)"
+            style="display: none"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="canvas-wrapper" id="canvasWrapper">
+            <canvas id="backgroundCanvas" class="canvas-layer"></canvas>
+            <canvas id="drawingCanvas" class="canvas-layer"></canvas>
+            <canvas id="previewCanvas" class="canvas-layer"></canvas>
+          </div>
+        </div>
+
+        <!-- 右侧工具栏 -->
+        <div class="info-panel">
+          <div class="tab-buttons">
+            <!-- 添加隐藏按钮 -->
+            <button
+              id="toggleRightPanel"
+              class="toggle-panel-button"
+              title="隐藏右侧工具栏 (Tab)"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="tab-button active" data-tab="colors">
+              语义调色板
+            </button>
+            <button class="tab-button" data-tab="prompt-generator">
+              智能提示词
+            </button>
+          </div>
+
+          <div class="tab-content active" id="colors-tab">
+            <!-- 搜索和自定义颜色部分 -->
+            <div class="color-legend">
+              <div class="search-container">
+                <input
+                  type="text"
+                  id="colorSearch"
+                  placeholder="搜索颜色名称..."
+                />
+                <button id="searchButton">搜索</button>
+              </div>
+
+              <div class="custom-color-section">
+                <div class="panel-title">自定义颜色</div>
+                <div class="category-input-with-button-inline">
+                  <select id="colorCategory" class="color-category-select">
+                    <option value="" disabled selected>先选择分类</option>
+                    <option value="其它">其它</option>
+                  </select>
+                  <input
+                    type="text"
+                    id="customColorNames"
+                    placeholder="输入语义名"
+                  />
+                  <button id="addCustomColor" class="success">添加</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 颜色调色板容器 -->
+            <div id="colorPalette">
+              <!-- 颜色调色板将通过JavaScript动态生成 -->
+            </div>
+          </div>
+
+          <!-- 智能提示词生成器标签页 -->
+          <div class="tab-content" id="prompt-generator-tab">
+            <div class="panel-title">智能提示词生成器</div>
+
+            <div class="select-with-checkbox">
+              <select id="spaceType">
+                <option value="通用场景">通用场景</option>
+                <option value="建筑外观">建筑外观</option>
+                <option value="景观设计">景观设计</option>
+                <option value="公共设施">公共设施</option>
+                <option value="住宅小区">住宅小区</option>
+                <option value="公园广场">公园广场</option>
+                <option value="道路桥梁">道路桥梁</option>
+              </select>
+              <!-- 添加 checked 属性 -->
+              <input type="checkbox" id="spaceTypeCheckbox" checked />
+            </div>
+
+            <div class="select-with-checkbox">
+              <select id="designStyle">
+                <option value="现代主义">现代主义</option>
+                <option value="后现代">后现代</option>
+                <option value="极简">极简</option>
+                <option value="工业风">工业风</option>
+                <option value="新中式">新中式</option>
+                <option value="欧式古典">欧式古典</option>
+                <option value="日式禅意">日式禅意</option>
+                <option value="生态自然">生态自然</option>
+                <option value="未来科技">未来科技</option>
+              </select>
+              <!-- 添加 checked 属性 -->
+              <input type="checkbox" id="designStyleCheckbox" checked />
+            </div>
+
+            <div class="select-with-checkbox">
+              <select id="lightingStyle">
+                <option value="自然采光">自然采光</option>
+                <option value="柔和温暖">柔和温暖</option>
+                <option value="明亮清晰">明亮清晰</option>
+                <option value="浪漫氛围">浪漫氛围</option>
+                <option value="高级质感">高级质感</option>
+                <option value="艺术氛围">艺术氛围</option>
+                <option value="戏剧效果">戏剧效果</option>
+              </select>
+              <!-- 添加 checked 属性 -->
+              <input type="checkbox" id="lightingStyleCheckbox" checked />
+            </div>
+
+            <div class="control-group">
+              <label>空间元素</label>
+              <div id="furnitureOptions">
+                <!-- 家具选项将通过JavaScript动态生成 -->
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="additionalPrompt">附加说明（可选）</label>
+              <input
+                type="text"
+                id="additionalPrompt"
+                placeholder="例如：石材装饰、玻璃幕墙、绿植点缀..."
+              />
+            </div>
+
+            <div class="control-group">
+              <label>其它要求</label>
+              <div id="otherRequirements">
+                <!-- 必选选项 -->
+                <div class="category-section">
+                  <div class="category-section-title" style="color: #e74c3c">
+                    必选选项
+                  </div>
+                  <div class="checkbox-group"></div>
+                </div>
+
+                <!-- 可选选项 -->
+                <div class="category-section">
+                  <div class="category-section-title" style="color: #e74c3c">
+                    可选选项
+                  </div>
+                  <div class="checkbox-group"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 按钮组 -->
+            <div class="smart-prompt-buttons">
+              <button id="applySmartPrompt" class="success">应用到导出</button>
+              <button id="revertSmartPrompt" class="warning">撤回</button>
+            </div>
+
+            <!-- 按钮组 -->
+            <div class="smart-prompt-buttons">
+              <button id="copySmartPrompt" style="width: 49%; margin-top: 6px">
+                复制智能提示词
+              </button>
+              <button
+                id="generatePromptFromCanvas"
+                class="secondary"
+                style="width: 49%; margin-top: 6px"
+              >
+                识别图像为提示词
+              </button>
+            </div>
+
+            <div class="control-group" style="margin-top: 12px">
+              <label for="smartPromptOutput">生成的提示词</label>
+              <textarea id="smartPromptOutput" rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <div>当前工具: <span id="currentTool">画笔</span></div>
+        <div>
+          坐标: <span class="coordinates" id="cursorCoordinates">(0, 0)</span>
+        </div>
+        <div>笔触大小: <span id="currentBrushSize">15px</span></div>
+        <div>标签数量: <span id="labelCount">0</span></div>
+        <div>画布尺寸: <span id="canvasSize">800x600</span></div>
+        <div>缩放: <span id="zoomLevelDisplay">100%</span></div>
+      </div>
+    </div>
+
+  <!-- index.html 中的脚本加载顺序 -->
+<!-- 基础库 -->
+<script src="1-color.js"></script>    
+<script src="1-data.js"></script>       
+
+<!-- 登录功能（必须先加载） -->
+<script src="denglu.js"></script>
+
+<!-- 主应用（在登录检查后加载） -->
+<script src="app.js"></script>
+
+  </body>
+</html>

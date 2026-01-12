@@ -396,6 +396,19 @@
           <!-- 智能提示词生成器标签页 -->
           <div class="tab-content" id="prompt-generator-tab">
             <div class="panel-title">智能提示词生成器</div>
+             <div class="select-with-checkbox">
+              <select id="gongneng">
+                <option value="提示词生图">提示词生图</option>
+                <option value="毛坯房生图">毛坯房生图</option>
+                <option value="3D模型渲染">3D模型渲染</option>                
+                <option value="拼贴图生图">拼贴图生图</option>
+                <option value="效果图优化">效果图优化</option>
+                <option value="颜色语义生图">颜色语义生图</option>
+                <option value="风格转换">风格转换</option>
+              </select>
+              <!-- 添加 checked 属性 -->
+                 <input type="checkbox" id="gongnengCheckbox" checked />
+            </div>
 
             <div class="select-with-checkbox">
               <select id="spaceType">
@@ -486,16 +499,17 @@
 
             <!-- 按钮组 -->
             <div class="smart-prompt-buttons">
-              <button id="copySmartPrompt" style="width: 49%; margin-top: 6px">
-                复制智能提示词
-              </button>
-              <button
+               <button
                 id="generatePromptFromCanvas"
                 class="secondary"
                 style="width: 49%; margin-top: 6px"
               >
                 识别图像为提示词
               </button>
+              <button id="copySmartPrompt" style="width: 49%; margin-top: 6px">
+                复制智能提示词
+              </button>
+             
             </div>
 
             <div class="control-group" style="margin-top: 12px">

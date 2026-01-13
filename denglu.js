@@ -1,11 +1,268 @@
-function showLoginMessage(message,type){var _0xg2d68b=(562417^562417)+(148673^148677);const _0x6df4a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0065\u0072\u0072\u006F\u0072");_0xg2d68b=(135539^135540)+(843047^843047);if(_0x6df4a){_0x6df4a['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=message;_0x6df4a['\u0063\u006C\u0061\u0073\u0073\u004E\u0061\u006D\u0065']=`login-error ${type}`;}}function resetLoginForm(){document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u0073\u0065\u0072\u006E\u0061\u006D\u0065")['\u0076\u0061\u006C\u0075\u0065']='';document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("drowssap".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']='';}function getDefaultUsers(){return[{"\u0075\u0073\u0065\u0072\u006E\u0061\u006D\u0065":"qiyu","password":"\u0038\u0034\u0031\u0038","\u006E\u0061\u006D\u0065":"\u7CFB\u7EDF\u7BA1\u7406\u5458","\u0069\u0073\u004C\u006F\u0063\u0061\u006C":!![],"isAdmin":!![]}];}function logout(){if(confirm("\u786E\u5B9A\u8981\u9000\u51FA\u767B\u5F55\u5417\uFF1F")){sessionStorage['\u0063\u006C\u0065\u0061\u0072']();localStorage['\u0072\u0065\u006D\u006F\u0076\u0065\u0049\u0074\u0065\u006D']("\u0061\u0069\u0050\u0072\u006F\u006D\u0070\u0074\u0048\u0069\u0073\u0074\u006F\u0072\u0079");location['\u0072\u0065\u006C\u006F\u0061\u0064']();}}async function loadCloudUsers(_0x929dc){var _0x2b_0x612=(194348^194344)+(496313^496313);_0x929dc="sj.oahgnahz-ym/war/ac1982f8dd06eb9fc32f59982e9a9672/sziabe/moc.tnetnocresubuhtig.tsig//:sptth".split("").reverse().join("");_0x2b_0x612=(435143^435142)+(855989^855997);try{var _0x32286b=(910920^910922)+(886686^886680);const _0xg43faa=await fetch(_0x929dc);_0x32286b="deofmi".split("").reverse().join("");const _0xd72a=await _0xg43faa['\u0074\u0065\u0078\u0074']();const _0x190e=parseUsersFromJS(_0xd72a);return _0x190e||[];}catch(error){console['\u0065\u0072\u0072\u006F\u0072']("\u52A0\u8F7D\u4E91\u7AEF\u8D26\u53F7\u5931\u8D25\u003A",error);throw error;}}function parseUsersFromJS(jsContent){try{var _0xbc_0x07a=(444052^444055)+(832136^832139);const _0xdf7d=[new RegExp('\u0063\u006F\u006E\u0073\u0074\u005C\u0073\u002B\u0062\u0075\u0069\u006C\u0074\u0049\u006E\u0055\u0073\u0065\u0072\u0073\u005C\u0073\u002A\u003D\u005C\u0073\u002A\u0028\u005C\u005B\u005B\u005C\u0073\u005C\u0053\u005D\u002A\u003F\u005C\u005D\u0029\u003B',""),new RegExp('\u0076\u0061\u0072\u005C\u0073\u002B\u0062\u0075\u0069\u006C\u0074\u0049\u006E\u0055\u0073\u0065\u0072\u0073\u005C\u0073\u002A\u003D\u005C\u0073\u002A\u0028\u005C\u005B\u005B\u005C\u0073\u005C\u0053\u005D\u002A\u003F\u005C\u005D\u0029\u003B',""),new RegExp(";)]\\?*]S\\s\\[[\\(*s\\=*s\\sresUnItliub+s\\tel".split("").reverse().join(""),""),new RegExp('\u0062\u0075\u0069\u006C\u0074\u0049\u006E\u0055\u0073\u0065\u0072\u0073\u005C\u0073\u002A\u003D\u005C\u0073\u002A\u0028\u005C\u005B\u005B\u005C\u0073\u005C\u0053\u005D\u002A\u003F\u005C\u005D\u0029\u003B',"")];_0xbc_0x07a=861610^861613;var _0xc_0x175=(499028^499029)+(244008^244009);let _0x748gb=null;_0xc_0x175='\u006A\u0070\u006C\u006B\u006F\u006E';for(const _0x96fg of _0xdf7d){const _0xd5289d=jsContent['\u006D\u0061\u0074\u0063\u0068'](_0x96fg);if(_0xd5289d){try{_0x748gb=JSON['\u0070\u0061\u0072\u0073\u0065'](_0xd5289d[679650^679651]['\u0072\u0065\u0070\u006C\u0061\u0063\u0065'](new RegExp('\u0028\u005C\u0077\u002B\u0029\u003A','\u0067'),"\u0022\u0024\u0031\u0022\u003A"));break;}catch(parseError){continue;}}}if(!_0x748gb){try{const _0x4be=jsContent+";][ || sresUnItliub nruter ;".split("").reverse().join("");const _0xbc2=new Function(_0x4be);_0x748gb=_0xbc2();}catch(evalError){console['\u0065\u0072\u0072\u006F\u0072']("\u0065\u0076\u0061\u006C\u65B9\u5F0F\u4E5F\u5931\u8D25\u4E86\u003A",evalError);}}return _0x748gb||[];}catch(error){console['\u0065\u0072\u0072\u006F\u0072']("\u89E3\u6790\u7528\u6237\u6570\u636E\u5931\u8D25\u003A",error);return[];}}async function handleLogin(){const _0x7f1a2d=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("emanresu".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();var _0xf536d;const _0x19dgb=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("drowssap".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];_0xf536d=(154141^154138)+(653765^653772);var _0x432b;const _0x8e70f=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0062\u0075\u0074\u0074\u006F\u006E");_0x432b=(167045^167044)+(611546^611538);const _0x4e4e9f=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u006C\u006F\u0061\u0064\u0069\u006E\u0067");var _0xa82f;const _0xab_0xd9b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("rorre-nigol".split("").reverse().join(""));_0xa82f=530431^530430;if(!_0x7f1a2d||!_0x19dgb){_0xab_0xd9b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u8BF7\u8F93\u5165\u7528\u6237\u540D\u548C\u5BC6\u7801";_0xab_0xd9b['\u0073\u0074\u0079\u006C\u0065']['\u0063\u006F\u006C\u006F\u0072']="\u0023\u0066\u0061\u0038\u0063\u0031\u0036";return;}_0x8e70f['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="enon".split("").reverse().join("");_0x4e4e9f['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0062\u006C\u006F\u0063\u006B";_0xab_0xd9b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']='';try{var _0x_0xd8b=(623780^623782)+(707337^707341);const _0xa7gcc=await loadCloudUsers();_0x_0xd8b="bkjkoi".split("").reverse().join("");const _0x7281bc=_0xa7gcc['\u0066\u0069\u006E\u0064'](u=>u['\u0075\u0073\u0065\u0072\u006E\u0061\u006D\u0065']===_0x7f1a2d&&u['\u0070\u0061\u0073\u0073\u0077\u006F\u0072\u0064']===_0x19dgb);if(_0x7281bc){handleLoginSuccess(_0x7281bc);}else{var _0xa778c=(440379^440376)+(850346^850346);const _0xd054b=getDefaultUsers();_0xa778c="qpbdmd".split("").reverse().join("");var _0xec46ba;const _0xf_0xd3f=_0xd054b['\u0066\u0069\u006E\u0064'](u=>u['\u0075\u0073\u0065\u0072\u006E\u0061\u006D\u0065']===_0x7f1a2d&&u['\u0070\u0061\u0073\u0073\u0077\u006F\u0072\u0064']===_0x19dgb);_0xec46ba=(554908^554901)+(332207^332198);if(_0xf_0xd3f){handleLoginSuccess(_0xf_0xd3f);}else{_0xab_0xd9b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u7528\u6237\u540D\u6216\u5BC6\u7801\u9519\u8BEF";_0xab_0xd9b['\u0073\u0074\u0079\u006C\u0065']['\u0063\u006F\u006C\u006F\u0072']="f4d4ff#".split("").reverse().join("");_0x8e70f['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0062\u006C\u006F\u0063\u006B";_0x4e4e9f['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="enon".split("").reverse().join("");}}}catch(error){console['\u0065\u0072\u0072\u006F\u0072'](":\u9519\u51FA\u7A0B\u8FC7\u5F55\u767B".split("").reverse().join(""),error);_0xab_0xd9b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u767B\u5F55\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u7EDC\u8FDE\u63A5\u6216\u8054\u7CFB\u7BA1\u7406\u5458";_0xab_0xd9b['\u0073\u0074\u0079\u006C\u0065']['\u0063\u006F\u006C\u006F\u0072']="f4d4ff#".split("").reverse().join("");_0x8e70f['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0062\u006C\u006F\u0063\u006B";_0x4e4e9f['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="enon".split("").reverse().join("");}}function handleLoginSuccess(user){sessionStorage['\u0073\u0065\u0074\u0049\u0074\u0065\u006D']("nIdeggoLsi".split("").reverse().join(""),"eurt".split("").reverse().join(""));sessionStorage['\u0073\u0065\u0074\u0049\u0074\u0065\u006D']("\u0075\u0073\u0065\u0072\u004E\u0061\u006D\u0065",user['\u006E\u0061\u006D\u0065']);sessionStorage['\u0073\u0065\u0074\u0049\u0074\u0065\u006D']("\u0075\u0073\u0065\u0072\u0052\u006F\u006C\u0065",user['\u0069\u0073\u0041\u0064\u006D\u0069\u006E']?"\u0061\u0064\u006D\u0069\u006E":"resu".split("").reverse().join(""));var _0xb9b=(734037^734033)+(720192^720194);const _0x7d4c=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0065\u0072\u0072\u006F\u0072");_0xb9b=(997223^997217)+(239031^239024);_0x7d4c['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u767B\u5F55\u6210\u529F\uFF0C\u6B63\u5728\u8FDB\u5165\u7CFB\u7EDF\u002E\u002E\u002E";_0x7d4c['\u0073\u0074\u0079\u006C\u0065']['\u0063\u006F\u006C\u006F\u0072']="a14c25#".split("").reverse().join("");setTimeout(()=>{location['\u0072\u0065\u006C\u006F\u0061\u0064']();},599398^599622);}function showMainApp(){const _0x3b_0x606=sessionStorage['\u0067\u0065\u0074\u0049\u0074\u0065\u006D']("\u0075\u0073\u0065\u0072\u004E\u0061\u006D\u0065")||"\u7528\u6237";document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0063\u006F\u006E\u0074\u0061\u0069\u006E\u0065\u0072")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="enon".split("").reverse().join("");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("reniatnoc-niam".split("").reverse().join(""))['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0062\u006C\u006F\u0063\u006B";const _0x9848e=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u0073\u0065\u0072\u002D\u0069\u006E\u0066\u006F");if(_0x9848e){_0x9848e['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']=`
-            <span class="user-name"><i class="fas fa-user"></i> ${_0x3b_0x606}</span>
+
+// 显示登录消息
+function showLoginMessage(message, type) {
+    const loginError = document.getElementById('login-error');
+    if (loginError) {
+        loginError.textContent = message;
+        loginError.className = `login-error ${type}`;
+    }
+}
+
+// 重置登录表单
+function resetLoginForm() {
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+}
+
+// 1. 本地默认用户（备用）
+function getDefaultUsers() {
+    return [
+        {
+            "username": "qiyu",
+            "password": "8418",
+            "name": "系统管理员",
+            "isLocal": true,
+            "isAdmin": true
+        }
+    ];
+}
+// 9. 全局退出函数 - 替换index.html中的版本
+function logout() {
+    if (confirm('确定要退出登录吗？')) {
+        // 清除所有存储
+        sessionStorage.clear();
+        localStorage.removeItem('aiPromptHistory');
+        
+        // 强制刷新页面回到登录状态
+        location.reload();
+    }
+}
+
+// 2. 从云端加载账号信息
+async function loadCloudUsers() {
+    const cloudUrl = 'https://gist.githubusercontent.com/ebaizs/2769a9e28995f23cf9be60dd8f2891ca/raw/my-zhanghao.js';
+    
+    try {
+        const response = await fetch(cloudUrl);
+        const jsContent = await response.text();
+        const users = parseUsersFromJS(jsContent);
+        return users || [];
+    } catch (error) {
+        console.error('加载云端账号失败:', error);
+        throw error;
+    }
+}
+
+function parseUsersFromJS(jsContent) {
+    try {
+        const patterns = [
+            /const\s+builtInUsers\s*=\s*(\[[\s\S]*?\]);/,
+            /var\s+builtInUsers\s*=\s*(\[[\s\S]*?\]);/,
+            /let\s+builtInUsers\s*=\s*(\[[\s\S]*?\]);/,
+            /builtInUsers\s*=\s*(\[[\s\S]*?\]);/
+        ];
+        
+        let usersArray = null;
+        
+        for (const pattern of patterns) {
+            const match = jsContent.match(pattern);
+            if (match) {
+                try {
+                    usersArray = JSON.parse(match[1].replace(/(\w+):/g, '"$1":'));
+                    break;
+                } catch (parseError) {
+                    continue;
+                }
+            }
+        }
+        
+        if (!usersArray) {
+            try {
+                const jsWithReturn = jsContent + '; return builtInUsers || [];';
+                const getUsers = new Function(jsWithReturn);
+                usersArray = getUsers();
+            } catch (evalError) {
+                console.error('eval方式也失败了:', evalError);
+            }
+        }
+        
+        return usersArray || [];
+    } catch (error) {
+        console.error('解析用户数据失败:', error);
+        return [];
+    }
+}
+
+// 3. 登录处理函数
+async function handleLogin() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    const loginButton = document.getElementById('login-button');
+    const loginLoading = document.getElementById('login-loading');
+    const loginError = document.getElementById('login-error');
+    
+    if (!username || !password) {
+        loginError.textContent = '请输入用户名和密码';
+        loginError.style.color = '#fa8c16';
+        return;
+    }
+    
+    loginButton.style.display = 'none';
+    loginLoading.style.display = 'block';
+    loginError.textContent = '';
+    
+    try {
+        const cloudUsers = await loadCloudUsers();
+        const user = cloudUsers.find(u => u.username === username && u.password === password);
+        
+        if (user) {
+            handleLoginSuccess(user);
+        } else {
+            // 备用：检查本地用户
+            const defaultUsers = getDefaultUsers();
+            const localUser = defaultUsers.find(u => u.username === username && u.password === password);
+            
+            if (localUser) {
+                handleLoginSuccess(localUser);
+            } else {
+                loginError.textContent = '用户名或密码错误';
+                loginError.style.color = '#ff4d4f';
+                loginButton.style.display = 'block';
+                loginLoading.style.display = 'none';
+            }
+        }
+    } catch (error) {
+        console.error('登录过程出错:', error);
+        loginError.textContent = '登录失败，请检查网络连接或联系管理员';
+        loginError.style.color = '#ff4d4f';
+        loginButton.style.display = 'block';
+        loginLoading.style.display = 'none';
+    }
+}
+
+// 4. 登录成功处理
+function handleLoginSuccess(user) {
+    sessionStorage.setItem('isLoggedIn', 'true');
+    sessionStorage.setItem('userName', user.name);
+    sessionStorage.setItem('userRole', user.isAdmin ? 'admin' : 'user');
+    
+    const loginError = document.getElementById('login-error');
+    loginError.textContent = '登录成功，正在进入系统...';
+    loginError.style.color = '#52c41a';
+    
+    setTimeout(() => {
+        location.reload();
+    }, 800);
+}
+
+
+// 5. 显示主应用
+function showMainApp() {
+    const userName = sessionStorage.getItem('userName') || '用户';
+    
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('main-container').style.display = 'block';
+    
+    // 更新用户信息到右上角
+    const userInfo = document.getElementById('user-info');
+    if (userInfo) {
+        userInfo.innerHTML = `
+            <span class="user-name"><i class="fas fa-user"></i> ${userName}</span>
             <button onclick="logout()" class="logout-btn">
                 <i class="fas fa-sign-out-alt"></i> 退出
             </button>
-        `;}}function initLogin(){sessionStorage['\u0072\u0065\u006D\u006F\u0076\u0065\u0049\u0074\u0065\u006D']("\u0069\u0073\u004C\u006F\u0067\u0067\u0065\u0064\u0049\u006E");sessionStorage['\u0072\u0065\u006D\u006F\u0076\u0065\u0049\u0074\u0065\u006D']("\u0075\u0073\u0065\u0072\u004E\u0061\u006D\u0065");sessionStorage['\u0072\u0065\u006D\u006F\u0076\u0065\u0049\u0074\u0065\u006D']("eloRresu".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0063\u006F\u006E\u0074\u0061\u0069\u006E\u0065\u0072")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="xelf".split("").reverse().join("");var _0x46d=(616070^616070)+(221770^221762);const _0x540ee=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0062\u0075\u0074\u0074\u006F\u006E");_0x46d=(122493^122492)+(451747^451749);if(_0x540ee){_0x540ee['\u0061\u0064\u0064\u0045\u0076\u0065\u006E\u0074\u004C\u0069\u0073\u0074\u0065\u006E\u0065\u0072']("kcilc".split("").reverse().join(""),handleLogin);}var _0xebd4f;const _0x3b0g2f=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("drowssap".split("").reverse().join(""));_0xebd4f=(140277^140272)+(293194^293198);if(_0x3b0g2f){_0x3b0g2f['\u0061\u0064\u0064\u0045\u0076\u0065\u006E\u0074\u004C\u0069\u0073\u0074\u0065\u006E\u0065\u0072']("\u006B\u0065\u0079\u0070\u0072\u0065\u0073\u0073",function(e){if(e['\u006B\u0065\u0079']==="\u0045\u006E\u0074\u0065\u0072"){handleLogin();}});}const _0xe9b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u0073\u0065\u0072\u006E\u0061\u006D\u0065");if(_0xe9b){_0xe9b['\u0061\u0064\u0064\u0045\u0076\u0065\u006E\u0074\u004C\u0069\u0073\u0074\u0065\u006E\u0065\u0072']("\u006B\u0065\u0079\u0070\u0072\u0065\u0073\u0073",function(e){if(e['\u006B\u0065\u0079']==="\u0045\u006E\u0074\u0065\u0072"){document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("drowssap".split("").reverse().join(""))['\u0066\u006F\u0063\u0075\u0073']();}});}}function checkLoginStatus(){const _0xab9aaf=sessionStorage['\u0067\u0065\u0074\u0049\u0074\u0065\u006D']("\u0069\u0073\u004C\u006F\u0067\u0067\u0065\u0064\u0049\u006E");if(_0xab9aaf==="\u0074\u0072\u0075\u0065"){showMainApp();return!![];}else{document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("reniatnoc-niam".split("").reverse().join(""))['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u006E\u006F\u006E\u0065";document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("reniatnoc-nigol".split("").reverse().join(""))['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0066\u006C\u0065\u0078";return false;}}document['\u0061\u0064\u0064\u0045\u0076\u0065\u006E\u0074\u004C\u0069\u0073\u0074\u0065\u006E\u0065\u0072']("dedaoLtnetnoCMOD".split("").reverse().join(""),function(){console['\u006C\u006F\u0067']("\u0044\u004F\u004D\u52A0\u8F7D\u5B8C\u6210\uFF0C\u68C0\u67E5\u767B\u5F55\u72B6\u6001\u002E\u002E\u002E");var _0x7d515g=(806016^806025)+(479604^479604);const _0xa0c4d=sessionStorage['\u0067\u0065\u0074\u0049\u0074\u0065\u006D']("\u0069\u0073\u004C\u006F\u0067\u0067\u0065\u0064\u0049\u006E");_0x7d515g=235072^235072;var _0xbb8c=(965167^965167)+(785279^785273);const _0xbg1bga=sessionStorage['\u0067\u0065\u0074\u0049\u0074\u0065\u006D']("\u0075\u0073\u0065\u0072\u004E\u0061\u006D\u0065");_0xbb8c=(735763^735760)+(925972^925980);if(_0xa0c4d==="\u0074\u0072\u0075\u0065"&&_0xbg1bga){console['\u006C\u006F\u0067']("\u7528\u6237\u5DF2\u767B\u5F55\uFF0C\u663E\u793A\u4E3B\u5E94\u7528");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006C\u006F\u0067\u0069\u006E\u002D\u0063\u006F\u006E\u0074\u0061\u0069\u006E\u0065\u0072")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="enon".split("").reverse().join("");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u0061\u0069\u006E\u002D\u0063\u006F\u006E\u0074\u0061\u0069\u006E\u0065\u0072")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0062\u006C\u006F\u0063\u006B";var _0x6abc;const _0x9cd11c=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("ofni-resu".split("").reverse().join(""));_0x6abc=(764982^764979)+(401985^401993);if(_0x9cd11c){_0x9cd11c['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']=`
-                <span class="user-name"><i class="fas fa-user"></i> ${_0xbg1bga}</span>
+        `;
+    }
+}
+
+
+// 7. 初始化登录界面 - 修改为每次都检查
+function initLogin() {
+    // 清除之前的登录状态，强制每次都登录
+    sessionStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('userName');
+    sessionStorage.removeItem('userRole');
+    
+    // 显示登录界面
+    document.getElementById('login-container').style.display = 'flex';
+    
+    // 绑定登录按钮事件
+    const loginButton = document.getElementById('login-button');
+    if (loginButton) {
+        loginButton.addEventListener('click', handleLogin);
+    }
+    
+    // 绑定回车键登录
+    const passwordInput = document.getElementById('password');
+    if (passwordInput) {
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleLogin();
+            }
+        });
+    }
+    
+    const usernameInput = document.getElementById('username');
+    if (usernameInput) {
+        usernameInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('password').focus();
+            }
+        });
+    }
+}
+
+// 8. 检查登录状态（每次刷新都要求登录）
+function checkLoginStatus() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    
+    if (isLoggedIn === 'true') {
+        showMainApp();
+        return true;
+    } else {
+        // 未登录，显示登录界面
+        document.getElementById('main-container').style.display = 'none';
+        document.getElementById('login-container').style.display = 'flex';
+        return false;
+    }
+}
+
+
+// 10. 页面加载时检查登录状态
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM加载完成，检查登录状态...');
+    
+    // 检查登录状态
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const userName = sessionStorage.getItem('userName');
+    
+    if (isLoggedIn === 'true' && userName) {
+        console.log('用户已登录，显示主应用');
+        
+        // 如果已登录，显示主应用
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('main-container').style.display = 'block';
+        
+        // 更新用户信息到右上角
+        const userInfo = document.getElementById('user-info');
+        if (userInfo) {
+            userInfo.innerHTML = `
+                <span class="user-name"><i class="fas fa-user"></i> ${userName}</span>
                 <button onclick="logout()" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i> 退出
                 </button>
-            `;}}else{console['\u006C\u006F\u0067']("\u9762\u754C\u5F55\u767B\u793A\u663E\uFF0C\u5F55\u767B\u672A\u6237\u7528".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u0061\u0069\u006E\u002D\u0063\u006F\u006E\u0074\u0061\u0069\u006E\u0065\u0072")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u006E\u006F\u006E\u0065";document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("reniatnoc-nigol".split("").reverse().join(""))['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="xelf".split("").reverse().join("");initLogin();}});
+            `;
+        }
+        
+        // 注意：这里不调用 CoreFunctions.initApp()，让 app.js 来处理初始化
+    } else {
+        console.log('用户未登录，显示登录界面');
+        
+        // 未登录，显示登录界面
+        document.getElementById('main-container').style.display = 'none';
+        document.getElementById('login-container').style.display = 'flex';
+        
+        // 初始化登录界面
+        initLogin();
+    }
+});
